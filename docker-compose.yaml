@@ -3,12 +3,16 @@ services:
   db:
     cap_add:
     - SYS_PTRACE
-    image: mcr.microsoft.com/azure-sql-edge:latest
     environment:
     - MSSQL_SA_PASSWORD=yourStrong(!)Password
     - ACCEPT_EULA=1
     ports:
     - "1433:1433"
+    user:
+      root
+    build:
+      context: .
+      dockerfile: ./DockerfileDb
   populator:
     build:
       context: .

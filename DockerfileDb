@@ -1,0 +1,3 @@
+FROM mcr.microsoft.com/azure-sql-edge:latest
+USER root
+RUN curl -L https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorks2014.bak > /AdventureWorks2014.bak

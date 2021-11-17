@@ -20,5 +20,8 @@ fi
 
 echo "======= MSSQL SERVER STARTED ========" | tee -a ./config.log
 
-echo "*********** Preparing SQL Server instance features: Contained databases " | tee -a ./config.log
+echo "*********** Loading Northwind database " | tee -a ./config.log
 /opt/mssql-tools/bin/sqlcmd -S db -U sa -P "yourStrong(!)Password" -d master -i /instnwnd.sql
+
+echo "*********** Loading AdventureWorks2014 database " | tee -a ./config.log
+/opt/mssql-tools/bin/sqlcmd -S db -U sa -P "yourStrong(!)Password" -d master -i /setup.sql
