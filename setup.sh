@@ -23,5 +23,8 @@ echo "======= MSSQL SERVER STARTED ========" | tee -a ./config.log
 echo "*********** Loading Northwind database " | tee -a ./config.log
 /opt/mssql-tools/bin/sqlcmd -S db -U sa -P "yourStrong(!)Password" -d master -i /instnwnd.sql
 
+echo "*********** Loading Pubs database " | tee -a ./config.log
+/opt/mssql-tools/bin/sqlcmd -S db -U sa -P "yourStrong(!)Password" -d master -i /instpubs.sql
+
 echo "*********** Loading AdventureWorks2014 database " | tee -a ./config.log
 /opt/mssql-tools/bin/sqlcmd -S db -U sa -P "yourStrong(!)Password" -d master -i /setup.sql
